@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeEval", "CodeEval\CodeEval.csproj", "{F3E61FEF-3920-4478-B7D6-8E82592D17A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeEval.Tests", "CodeEval.Tests\CodeEval.Tests.csproj", "{DDC13BD3-455C-4EF4-8F8E-C7672992C928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeEval.Runner", "CodeEval.Runner\CodeEval.Runner.csproj", "{F47CFDF6-234F-4010-B7D5-71762857BCB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3E61FEF-3920-4478-B7D6-8E82592D17A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E61FEF-3920-4478-B7D6-8E82592D17A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E61FEF-3920-4478-B7D6-8E82592D17A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E61FEF-3920-4478-B7D6-8E82592D17A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC13BD3-455C-4EF4-8F8E-C7672992C928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC13BD3-455C-4EF4-8F8E-C7672992C928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC13BD3-455C-4EF4-8F8E-C7672992C928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC13BD3-455C-4EF4-8F8E-C7672992C928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F47CFDF6-234F-4010-B7D5-71762857BCB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F47CFDF6-234F-4010-B7D5-71762857BCB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F47CFDF6-234F-4010-B7D5-71762857BCB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F47CFDF6-234F-4010-B7D5-71762857BCB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

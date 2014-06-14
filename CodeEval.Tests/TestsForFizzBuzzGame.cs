@@ -10,7 +10,7 @@ namespace CodeEval.Tests
     [TestFixture]
     public class TestsForFizzBuzzGame
     {
-        [Test]
+        [Test, Timeout(10000)]
         public void Play_WhenFirstIs3AndSecondIs5AndLimitIs10_ShouldBe12F4BF78FB()
         {
             var fizzBuzzGame = new FizzBuzzGame(3, 5);
@@ -18,7 +18,7 @@ namespace CodeEval.Tests
             Assert.That(result, Is.EqualTo("1 2 F 4 B F 7 8 F B"));
         }
 
-        [Test]
+        [Test, Timeout(10000)]
         public void Play_WhenFirstIs2AndSecondIs7AndLimitIs15_ShouldBe1F3F5FBF9F11F13FB15()
         {
             var fizzBuzzGame = new FizzBuzzGame(2, 7);

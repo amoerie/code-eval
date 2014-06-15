@@ -45,6 +45,7 @@
     <Compile Include="TestsForDiscountOffers.cs" />
     <Compile Include="TestsForFizzBuzzGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestsForLevenshteinDistance.cs" />
     <Compile Include="TestsForUglyNumbers.cs" />
   </ItemGroup>
   <ItemGroup>

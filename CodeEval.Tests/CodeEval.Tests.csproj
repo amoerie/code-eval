@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeEvalTest.cs" />
+    <Compile Include="TestsForDigitStatistics.cs" />
     <Compile Include="TestsForDiscountOffers.cs" />
     <Compile Include="TestsForFizzBuzzGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,6 +58,9 @@
       <Project>{f3e61fef-3920-4478-b7d6-8e82592d17a1}</Project>
       <Name>CodeEval</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestFiles\LevenshteinDistance\words.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

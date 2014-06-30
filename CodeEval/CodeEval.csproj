@@ -42,8 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DigitStatistics.cs" />
     <Compile Include="DiscountOffers.cs" />
+    <Compile Include="FileSize.cs" />
     <Compile Include="FizzBuzzGame.cs" />
+    <Compile Include="LevenshteinDistance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UglyNumbers.cs" />
   </ItemGroup>

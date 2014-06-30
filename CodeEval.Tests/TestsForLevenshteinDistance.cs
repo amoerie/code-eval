@@ -1,63 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace CodeEval.Tests
 {
     [TestFixture]
-    public class TestsForLevenshteinDistance
+    public class TestsForLevenshteinDistance: CodeEvalTest
     {
         [Test]
-        public void AreFriends_WhenDistancesAre1_ShouldReturnTrue()
+        public void IsFriendsWith_WhenDistancesAre1_ShouldReturnTrue()
         {
-            var levenshteinDistanceCalculator = new LevenshteinDistanceCalculator();
-
             // remove 1 letter in the middle
-            Assert.That(levenshteinDistanceCalculator.AreFriends("recursiveness", "recuriveness"), Is.True);
+            Assert.That(LevenshteinDistance.AreFriends("recursiveness","recuriveness"), Is.True);
             // replace 1 letter
-            Assert.That(levenshteinDistanceCalculator.AreFriends("recursiveness", "recurtiveness"), Is.True);
+            Assert.That(LevenshteinDistance.AreFriends("recursiveness","recurtiveness"), Is.True);
             // remove first letter
-            Assert.That(levenshteinDistanceCalculator.AreFriends("recursiveness", "ecursiveness"), Is.True);
+            Assert.That(LevenshteinDistance.AreFriends("recursiveness","ecursiveness"), Is.True);
             // remove last letter
-            Assert.That(levenshteinDistanceCalculator.AreFriends("recursiveness", "recursivenes"), Is.True);
+            Assert.That(LevenshteinDistance.AreFriends("recursiveness","recursivenes"), Is.True);
             // add 1 letter at the end
-            Assert.That(levenshteinDistanceCalculator.AreFriends("recursiveness", "recursivenesst"), Is.True);
+            Assert.That(LevenshteinDistance.AreFriends("recursiveness","recursivenesst"), Is.True);
             // add 1 letter at the beginning
-            Assert.That(levenshteinDistanceCalculator.AreFriends("recursiveness", "arecursiveness"), Is.True);
+            Assert.That(LevenshteinDistance.AreFriends("recursiveness","arecursiveness"), Is.True);
             // add 1 letter in the middle
-            Assert.That(levenshteinDistanceCalculator.AreFriends("recursiveness", "recursivaeness"), Is.True);
+            Assert.That(LevenshteinDistance.AreFriends("recursiveness","recursivaeness"), Is.True);
         }
 
         [Test]
-        public void AreFriends_WhenWordsAreEqual_ShouldReturnFalse()
+        public void IsFriendsWith_WhenWordsAreEqual_ShouldReturnFalse()
         {
-            var levenshteinDistanceCalculator = new LevenshteinDistanceCalculator();
-
-            Assert.That(levenshteinDistanceCalculator.AreFriends("recursiveness", "recursiveness"), Is.False);
-            Assert.That(levenshteinDistanceCalculator.AreFriends("elastic", "elastic"), Is.False);
-            Assert.That(levenshteinDistanceCalculator.AreFriends("macrographies", "macrographies"), Is.False);
+            Assert.That(LevenshteinDistance.AreFriends("recursiveness","recursiveness"), Is.False);
+            Assert.That(LevenshteinDistance.AreFriends("elastic","elastic"), Is.False);
+            Assert.That(LevenshteinDistance.AreFriends("macrographies","macrographies"), Is.False);
         }
 
         [Test]
-        public void AreFriends_WhenWordsAreTooDifferent_ShouldReturnFalse()
+        public void IsFriendsWith_WhenWordsAreTooDifferent_ShouldReturnFalse()
         {
-            var levenshteinDistanceCalculator = new LevenshteinDistanceCalculator();
-
             // completely different words
-            Assert.That(levenshteinDistanceCalculator.AreFriends("recursiveness", "elastic"), Is.False);
+            Assert.That(LevenshteinDistance.AreFriends("recursiveness","elastic"), Is.False);
 
             // 2 letters added
-            Assert.That(levenshteinDistanceCalculator.AreFriends("elastic", "elasticcc"), Is.False);
+            Assert.That(LevenshteinDistance.AreFriends("elastic","elasticcc"), Is.False);
 
             // 2 letters removed
-            Assert.That(levenshteinDistanceCalculator.AreFriends("macrographies", "macrograies"), Is.False);
+            Assert.That(LevenshteinDistance.AreFriends("macrographies","macrograies"), Is.False);
 
             // 2 letters replaced
-            Assert.That(levenshteinDistanceCalculator.AreFriends("macrographies", "sicrographies"), Is.False);
+            Assert.That(LevenshteinDistance.AreFriends("macrographies","sicrographies"), Is.False);
+        }
+
+        [Test]
+        public void GetSocialNetworkSize_WhenTestCaseIsElastic_ShouldReturn4()
+        {
+            var levenshteinDistance = new LevenshteinDistance(ReadTestFile("LevenshteinDistance.words.txt"));
+            Assert.That(levenshteinDistance.GetSocialNetworkSize("elastic"), Is.EqualTo(4));
+        }
+
+        [Test]
+        public void GetSocialNetworkSize_WhenTestCaseIsRecursiveness_ShouldReturn1()
+        {
+            var levenshteinDistance = new LevenshteinDistance(ReadTestFile("LevenshteinDistance.words.txt"));
+            Assert.That(levenshteinDistance.GetSocialNetworkSize("recursiveness"), Is.EqualTo(1));
+        }
+
+        [Test]
+        public void GetSocialNetworkSize_WhenTestCaseIsMacrographies_ShouldReturn1()
+        {
+            var levenshteinDistance = new LevenshteinDistance(ReadTestFile("LevenshteinDistance.words.txt"));
+            Assert.That(levenshteinDistance.GetSocialNetworkSize("macrographies"), Is.EqualTo(1));
         }
     }
 }

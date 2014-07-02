@@ -48,6 +48,7 @@
     <Compile Include="TestsForFizzBuzzGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestsForLevenshteinDistance.cs" />
+    <Compile Include="TestsForStringSubstitution.cs" />
     <Compile Include="TestsForUglyNumbers.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,7 +61,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TestFiles\LevenshteinDistance\words.txt" />
+    <Folder Include="TestFiles\LevenshteinDistance\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

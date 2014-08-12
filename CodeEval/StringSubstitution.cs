@@ -14,6 +14,16 @@ namespace CodeEval
             private readonly char[] _unreplacedString;
             private readonly char[] _replacedString;
 
+            public string Unreplaced
+            {
+                get { return new string(_unreplacedString); }
+            }
+
+            public string Replaced
+            {
+                get { return new string(_replacedString); }
+            }
+
             public String(string content)
             {
                 _unreplacedString = (content ?? string.Empty).ToCharArray();
@@ -31,14 +41,16 @@ namespace CodeEval
                         var unreplacedCopy = new char[newLength];
                         var replacedCopy = new char[newLength];
 
+                        // copy first part
                         Array.Copy(_unreplacedString, 0, unreplacedCopy, 0, index);
                         Array.Copy(_replacedString, 0, replacedCopy, 0, index);
 
-                        Array.Copy(_unreplacedString, index + toReplace.Length, unreplacedCopy, index + replaceWith.Length, _unreplacedString.Length - (index + toReplace.Length));
-                        Array.Copy(_replacedString, index + toReplace.Length, replacedCopy, index + replaceWith.Length, _replacedString.Length - (index + toReplace.Length));
+                        var remainingLength = _unreplacedString.Length - (index + toReplace.Length);
+                        Array.Copy(_unreplacedString, index + toReplace.Length, unreplacedCopy, index + replaceWith.Length, remainingLength);
+                        Array.Copy(_replacedString, index + toReplace.Length, replacedCopy, index + replaceWith.Length, remainingLength);
                         
                     }
-                    for (int i = index; i < index + toReplace.Length; i++)
+                    for (int i = index; i < index + replaceWith.Length; i++)
                     {
                         _unreplacedString[i] = default(char);
                         _replacedString[i] = replaceWith[i - index];

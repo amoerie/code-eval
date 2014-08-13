@@ -48,6 +48,7 @@
     <Compile Include="FizzBuzzGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringSubstitution.cs" />
+    <Compile Include="TextDollar.cs" />
     <Compile Include="UglyNumbers.cs" />
   </ItemGroup>
   <ItemGroup>
